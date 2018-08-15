@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +21,20 @@ class MainActivity : AppCompatActivity() {
             email = text_uname.text.toString()
             password = text_pwd.text.toString()
 
+
+            //Validating email and password entered
             validateUser(email, password)
+
+            if(email == "babu@gmail.com" && password == "123456"){
+
+                val loggedInIntent = Intent(applicationContext,UserActivity::class.java)
+                loggedInIntent.putExtra("UNAME", email)
+                loggedInIntent.putExtra("PWD",password)
+                startActivity(loggedInIntent)
+                overridePendingTransition(R.anim.slide_in_from_right,R.anim.slide_out_to_left)
+            }
+
+
 
         }
 
