@@ -16,6 +16,7 @@ class SignUpActivity : AppCompatActivity() {
 
             val loginIntent = Intent(applicationContext,MainActivity::class.java)
             startActivity(loginIntent)
+            overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
         }
     }
 }

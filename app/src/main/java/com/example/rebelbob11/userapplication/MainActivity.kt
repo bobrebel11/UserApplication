@@ -4,7 +4,6 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
-import android.util.Patterns.EMAIL_ADDRESS
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
             val signupIntent = Intent(applicationContext,SignUpActivity::class.java)
             startActivity(signupIntent)
+            overridePendingTransition(R.anim.slide_in_from_right,R.anim.slide_out_to_left)
         }
     }
 
